@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+#include<string.h>
 class Student
 {
     private:
@@ -12,6 +13,26 @@ class Student
     void input();
     void calculate();
     void show();
+    Student()
+    {
+        roll=1;
+        strcpy(Name,"George");
+        phy=90;
+        chem=90;
+        math=90;
+        eng=90;
+        comp=90;
+    }
+    Student(int r,char N[],int p,int c,int m,int co,int e)
+    {
+        roll=r;
+        strcpy(Name,N);
+        phy=p;
+        chem=c;
+        math=m;
+        eng=e;
+        comp=co;
+    }
 };
 void Student::input()
 {
@@ -58,8 +79,11 @@ void Student::show()
 int main()
 {
     Student x;
-    x.input();
+    Student y(3,"Gracia",89,89,89,89,89);
+    //x.input();
     x.calculate();
     x.show();
+    y.calculate();
+    y.show();
     return 0;
 }
